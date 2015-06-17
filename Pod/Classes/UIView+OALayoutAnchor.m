@@ -9,6 +9,7 @@
 @import ObjectiveC;
 #import "UIView+OALayoutAnchor.h"
 
+#ifndef __IPHONE_9_0
 @interface OALayoutAnchor ()
 - (instancetype)initWithAttribute:(NSLayoutAttribute)attribute view:(UIView*)view;
 @end
@@ -99,3 +100,4 @@
 }
 
 @end
+#endif
