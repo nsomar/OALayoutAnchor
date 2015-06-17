@@ -58,6 +58,8 @@ pod "OALayoutAnchor"
 
 There are several unit tests covering most of the Equality constraints. Unit test for covering Greater than or Lesser than are coming next.
 
+Test are currently running for iOS 8 only, test for iOS 7 are coming next.
+
 The following a [human readable](https://raw.githubusercontent.com/oarrabi/OALayoutAnchor/master/Example/Tests/tests.transcript.txt?token=ABZLPLZHHBeo2g41rVZSKjCf-_DnrTnFks5ViydLwA%3D%3D) text subscript (generated with [specipy](https://github.com/oarrabi/specipy)).
 
 
@@ -66,6 +68,8 @@ The following would be nice to have for future versions
 
 - [ ] Increase the test coverage for Greater than and Less Than
 - [ ] Better Documentation
+- [ ] Add tests for iOS 7
+- [ ] Improve demo app for iOS 7
 
 
 ## Author
