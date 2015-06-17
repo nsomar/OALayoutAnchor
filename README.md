@@ -36,13 +36,26 @@ Example Usage (Taken from apple websites):
  multiplier:1.0
  constant:0.0].active = YES;
  
+ ```
+
 The following constraint setup can be rewritten to the following:
 
+```
 // Creating the same constraints using Layout Anchors
 UILayoutGuide *margin = self.view.layoutMarginsGuide;
  
 [subview.leadingAnchor constraintEqualToAnchor:margin.leadingAnchor].active = YES;
 [subview.trailingAnchor constraintEqualToAnchor:margin.trailingAnchor].active = YES;
+```
+
+For iOS 7, since `active` property is not available on `NSLayoutConstraint` the constraint set will be already installed. The bellow code shows the usage on iOS7:   
+
+```objc
+// Creating the same constraints using Layout Anchors
+UILayoutGuide *margin = self.view.layoutMarginsGuide;
+ 
+[subview.leadingAnchor constraintEqualToAnchor:margin.leadingAnchor];
+[subview.trailingAnchor constraintEqualToAnchor:margin.trailingAnchor];
 ```
 
 For a better documentation please refer to [apple docs](https://developer.apple.com/library/prerelease/mac/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html).
