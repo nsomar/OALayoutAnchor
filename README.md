@@ -13,7 +13,7 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-Usage is 100% compatible with `NSLayoutAnchors`.:
+Usage is 100% compatible with `NSLayoutAnchors`.:   
 Example Usage (Taken from apple websites):
 
 ```objc
@@ -36,6 +36,8 @@ Example Usage (Taken from apple websites):
  multiplier:1.0
  constant:0.0].active = YES;
  
+The following constraint setup can be rewritten to the following:
+
 // Creating the same constraints using Layout Anchors
 UILayoutGuide *margin = self.view.layoutMarginsGuide;
  
