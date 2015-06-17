@@ -1,0 +1,6 @@
+framework module OALayoutAnchor {
+  umbrella header "Pods-OALayoutAnchor_Tests-OALayoutAnchor-umbrella.h"
+
+  export *
+  module * { export * }
+}
