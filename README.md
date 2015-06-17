@@ -1,6 +1,6 @@
 # OALayoutAnchor
 
-[![CI Status](http://img.shields.io/travis/Omar Abdelhafith/OALayoutAnchor.svg?style=flat)](https://travis-ci.org/Omar Abdelhafith/OALayoutAnchor)
+[![Build Status](https://travis-ci.org/oarrabi/OALayoutAnchor.svg)](https://travis-ci.org/oarrabi/OALayoutAnchor)
 [![Version](https://img.shields.io/cocoapods/v/OALayoutAnchor.svg?style=flat)](http://cocoapods.org/pods/OALayoutAnchor)
 [![License](https://img.shields.io/cocoapods/l/OALayoutAnchor.svg?style=flat)](http://cocoapods.org/pods/OALayoutAnchor)
 [![Platform](https://img.shields.io/cocoapods/p/OALayoutAnchor.svg?style=flat)](http://cocoapods.org/pods/OALayoutAnchor)
