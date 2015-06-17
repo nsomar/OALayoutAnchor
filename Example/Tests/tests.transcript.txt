@@ -1,0 +1,63 @@
+Spec: OALayoutAnchorSpec
+
+--------------------------------------------------
+Describe: OALayoutAnchor
+--------------------------------------------------
+
+    When: Leading Anchors and Top
+        It: can place views correctly
+        It: can place views correctly with positive constants
+        It: can place views correctly with negative constants
+
+    When: Trailing Anchors and Bottom
+        It: can place views correctly
+        It: can place views correctly with positive constants
+        It: can place views correctly with negative constants
+
+    When: Leading to Trailing and Top - Top
+        It: can place views correctly
+
+    When: Trailing to Leading and Top - Top
+        It: can place views correctly
+
+    When: Left to Left and Top - Bottom
+        It: can place views correctly
+
+    When: Right to Right and Top - Bottom
+        It: can place views correctly
+
+    When: CenterX and Bottom - Bottom
+        It: can place views correctly
+
+    When: CenterY and Leading
+        It: can place views correctly
+
+    When: Width and height
+        It: can place views correctly
+
+    When: Width and height with multipliers
+        It: can place views correctly
+
+    When: Width and height with multipliers and constants
+        It: can place views correctly
+Spec: UIView_OALayoutAnchorSpec
+
+--------------------------------------------------
+Describe: UIView+OALayoutAnchor
+--------------------------------------------------
+    It: Should create the anchor the first time
+    It: Should not create the anchor the second time
+
+    When: Anchors
+        It: Should create a leading anchor
+        It: Should create a trailing anchor
+        It: Should create a left anchor
+        It: Should create a right anchor
+        It: Should create a top anchor
+        It: Should create a bottom anchor
+        It: Should create a width anchor
+        It: Should create a height anchor
+        It: Should create a center X anchor
+        It: Should create a center Y anchor
+        It: Should create a first baseline anchor
+        It: Should create a last baseline anchor

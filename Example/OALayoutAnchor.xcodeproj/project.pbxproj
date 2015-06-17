@@ -24,6 +24,7 @@
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		A77137951B318FA900199734 /* UIView+OALayoutAnchorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A77137941B318FA900199734 /* UIView+OALayoutAnchorSpec.m */; };
 		A7C294BE1B32100400575FDC /* OALayoutAnchorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C294BC1B320FD000575FDC /* OALayoutAnchorSpec.m */; };
+		A7C294C11B3218C400575FDC /* OATestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C294C01B3218C400575FDC /* OATestHelpers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		99AE0F1E60E65D12EBD146C4 /* Pods-OALayoutAnchor_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OALayoutAnchor_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OALayoutAnchor_Tests/Pods-OALayoutAnchor_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A77137941B318FA900199734 /* UIView+OALayoutAnchorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+OALayoutAnchorSpec.m"; sourceTree = "<group>"; };
 		A7C294BC1B320FD000575FDC /* OALayoutAnchorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OALayoutAnchorSpec.m; sourceTree = "<group>"; };
+		A7C294BF1B3218C400575FDC /* OATestHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OATestHelpers.h; sourceTree = "<group>"; };
+		A7C294C01B3218C400575FDC /* OATestHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OATestHelpers.m; sourceTree = "<group>"; };
 		BA7D6F89972542C21150863E /* Pods-OALayoutAnchor_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OALayoutAnchor_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-OALayoutAnchor_Example/Pods-OALayoutAnchor_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C6B74AB76642B715E07348F3 /* Pods_OALayoutAnchor_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OALayoutAnchor_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E55E21FFE1F1A3C632CEB35E /* Pods_OALayoutAnchor_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OALayoutAnchor_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +164,8 @@
 				6003F5B6195388D20070C39A /* Supporting Files */,
 				A77137941B318FA900199734 /* UIView+OALayoutAnchorSpec.m */,
 				A7C294BC1B320FD000575FDC /* OALayoutAnchorSpec.m */,
+				A7C294BF1B3218C400575FDC /* OATestHelpers.h */,
+				A7C294C01B3218C400575FDC /* OATestHelpers.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A77137951B318FA900199734 /* UIView+OALayoutAnchorSpec.m in Sources */,
+				A7C294C11B3218C400575FDC /* OATestHelpers.m in Sources */,
 				A7C294BE1B32100400575FDC /* OALayoutAnchorSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
