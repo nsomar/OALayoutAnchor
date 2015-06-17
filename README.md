@@ -1,13 +1,13 @@
 # OALayoutAnchor
 
-`OALayoutAnchor` is an effort to port the amazing [NSLayoutAnchor](https://developer.apple.com/library/prerelease/mac/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html) introduced in iOS 9 to iOS 7.
-
-`OALayoutAnchor` is a 100% port of `NSLayoutAnchor` to iOS 7, it aims to provide the same funtionality to iOS 7, and rollback to `NSLayoutAnchor` on iOS 9 and up.
-
 [![CI Status](http://img.shields.io/travis/Omar Abdelhafith/OALayoutAnchor.svg?style=flat)](https://travis-ci.org/Omar Abdelhafith/OALayoutAnchor)
 [![Version](https://img.shields.io/cocoapods/v/OALayoutAnchor.svg?style=flat)](http://cocoapods.org/pods/OALayoutAnchor)
 [![License](https://img.shields.io/cocoapods/l/OALayoutAnchor.svg?style=flat)](http://cocoapods.org/pods/OALayoutAnchor)
 [![Platform](https://img.shields.io/cocoapods/p/OALayoutAnchor.svg?style=flat)](http://cocoapods.org/pods/OALayoutAnchor)
+
+`OALayoutAnchor` is an effort to port the amazing [NSLayoutAnchor](https://developer.apple.com/library/prerelease/mac/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html) introduced in iOS 9 to iOS 7.
+
+`OALayoutAnchor` is a 100% port of `NSLayoutAnchor` to iOS 7, it aims to provide the same funtionality to iOS 7, and rollback to `NSLayoutAnchor` on iOS 9 and up.
 
 ## Usage
 
