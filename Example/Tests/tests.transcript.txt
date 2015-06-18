@@ -9,13 +9,25 @@ Describe: OALayoutAnchor
         It: can place views correctly with positive constants
         It: can place views correctly with negative constants
 
+        When: Greater than or Less than constraints
+            It: can place views correctly with greater than constraints
+            It: can place views correctly with less than constraints
+
     When: Trailing Anchors and Bottom
         It: can place views correctly
         It: can place views correctly with positive constants
         It: can place views correctly with negative constants
 
+        When: Greater than or Less than constraints
+            It: can place views correctly with greater than constraints
+            It: can place views correctly with less than constraints
+
     When: Leading to Trailing and Top - Top
         It: can place views correctly
+
+        When: Greater than or Less than constraints
+            It: can place views correctly with greater than constraints
+            It: can place views correctly with less than constraints
 
     When: Trailing to Leading and Top - Top
         It: can place views correctly
@@ -23,23 +35,51 @@ Describe: OALayoutAnchor
     When: Left to Left and Top - Bottom
         It: can place views correctly
 
+        When: Greater than or Less than constraints
+            It: can place views correctly with greater than constraints
+            It: can place views correctly with less than constraints
+
     When: Right to Right and Top - Bottom
         It: can place views correctly
+
+        When: Greater than or Less than constraints
+            It: can place views correctly with greater than constraints
+            It: can place views correctly with less than constraints
 
     When: CenterX and Bottom - Bottom
         It: can place views correctly
 
+        When: Greater than or Less than constraints
+            It: can place views correctly with greater than constraints
+            It: can place views correctly with less than constraints
+
     When: CenterY and Leading
         It: can place views correctly
+
+        When: Greater than or Less than constraints
+            It: can place views correctly with greater than constraints
+            It: can place views correctly with less than constraints
 
     When: Width and height
         It: can place views correctly
 
+        When: Greater than or Less than constraints
+            It: can place views correctly with greater than constraints
+            It: can place views correctly with less than constraints
+
     When: Width and height with multipliers
         It: can place views correctly
 
+        When: Greater than or Less than constraints
+            It: can place views correctly with greater than constraints
+            It: can place views correctly with less than constraints
+
     When: Width and height with multipliers and constants
         It: can place views correctly
+
+        When: Greater than or Less than constraints
+            It: can place views correctly with greater than constraints
+            It: can place views correctly with less than constraints
 Spec: UIView_OALayoutAnchorSpec
 
 --------------------------------------------------

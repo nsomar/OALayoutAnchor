@@ -139,8 +139,11 @@
                                                   relatedBy:NSLayoutRelationEqual
                                                  multiplier:m
                                                    constant:c];
+  
   constraint.priority = 1000;
-  [self addConstraintOnView:constraint];
+  id viewToAdd = anchor ? [self viewToAddConstraintOnForFirstView:self.view secondView:anchor.view] : self.view;
+  [self addConstraint:constraint toView:viewToAdd];
+  
   return constraint;
 }
 
@@ -149,8 +152,11 @@
                                                   relatedBy:NSLayoutRelationGreaterThanOrEqual
                                                  multiplier:m
                                                    constant:c];
+
   constraint.priority = 1000;
-  [self addConstraintOnView:constraint];
+  id viewToAdd = anchor ? [self viewToAddConstraintOnForFirstView:self.view secondView:anchor.view] : self.view;
+  [self addConstraint:constraint toView:viewToAdd];
+  
   return constraint;
 }
 
@@ -159,8 +165,11 @@
                                                   relatedBy:NSLayoutRelationLessThanOrEqual
                                                  multiplier:m
                                                    constant:c];
+  
   constraint.priority = 1000;
-  [self addConstraintOnView:constraint];
+  id viewToAdd = anchor ? [self viewToAddConstraintOnForFirstView:self.view secondView:anchor.view] : self.view;
+  [self addConstraint:constraint toView:viewToAdd];
+  
   return constraint;
 }
 
@@ -178,8 +187,8 @@
                                        constant:c];
 }
 
-- (void)addConstraintOnView:(NSLayoutConstraint*)constraint {
-  [self.view addConstraint:constraint];
+- (void)addConstraint:(NSLayoutConstraint*)constraint toView:(UIView*)view {
+  [view addConstraint:constraint];
   
   if ([constraint respondsToSelector:@selector(setActive:)]) {
     constraint.active = NO;
