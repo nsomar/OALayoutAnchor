@@ -142,6 +142,8 @@
 		A1198889351CDD511815112E /* KWFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 749D8FCB0A622B73F0126881 /* KWFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3411166F1A73E99127087AD /* KWProbe.h in Headers */ = {isa = PBXBuildFile; fileRef = BB3772F2B9A89FBAF5701EB3 /* KWProbe.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A510FFFEB44F6BD708D23C3D /* KWMatcherFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D880D2F74A1C7A51F189DAA8 /* KWMatcherFactory.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A72735A51B32613F0054D4B0 /* NSLayoutConstraint+SuppressActive.h in Headers */ = {isa = PBXBuildFile; fileRef = A72735A31B32613F0054D4B0 /* NSLayoutConstraint+SuppressActive.h */; };
+		A72735A61B32613F0054D4B0 /* NSLayoutConstraint+SuppressActive.m in Sources */ = {isa = PBXBuildFile; fileRef = A72735A41B32613F0054D4B0 /* NSLayoutConstraint+SuppressActive.m */; };
 		AA85EF995C05E1541C0677B3 /* KWFutureObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 166D86584BD5001D37815837 /* KWFutureObject.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		ABDDB9B0AFF78B8B4EAFF610 /* NSValue+KiwiAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D57B6BEF892FA959AFAACFF /* NSValue+KiwiAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		AFDD8626FF09424272BCD38D /* OALayoutAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 606F14EEDCE6D63313FC77AD /* OALayoutAnchor.m */; };
@@ -413,6 +415,8 @@
 		A4DCE2B13CA84D79A3CD57EB /* KWBeSubclassOfClassMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KWBeSubclassOfClassMatcher.m; path = Classes/Matchers/KWBeSubclassOfClassMatcher.m; sourceTree = "<group>"; };
 		A51E4936E55084E180C8E117 /* KWMatcherFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KWMatcherFactory.h; path = Classes/Core/KWMatcherFactory.h; sourceTree = "<group>"; };
 		A64DD5C6F6EFF0C92CBEBE2E /* KWBeBetweenMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KWBeBetweenMatcher.h; path = Classes/Matchers/KWBeBetweenMatcher.h; sourceTree = "<group>"; };
+		A72735A31B32613F0054D4B0 /* NSLayoutConstraint+SuppressActive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+SuppressActive.h"; sourceTree = "<group>"; };
+		A72735A41B32613F0054D4B0 /* NSLayoutConstraint+SuppressActive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+SuppressActive.m"; sourceTree = "<group>"; };
 		A79A3C1423F95670B05165BD /* KWRegisterMatchersNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KWRegisterMatchersNode.m; path = Classes/Nodes/KWRegisterMatchersNode.m; sourceTree = "<group>"; };
 		A7C294C21B32584900575FDC /* UIView+OALayoutAnchorInternals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+OALayoutAnchorInternals.h"; sourceTree = "<group>"; };
 		A8555DA3F7B1D338ABD4E413 /* UIView+OALayoutAnchor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+OALayoutAnchor.m"; sourceTree = "<group>"; };
@@ -826,6 +830,8 @@
 				7010F3D07CFCA465D4CFF7A8 /* UIView+OALayoutAnchor.h */,
 				A8555DA3F7B1D338ABD4E413 /* UIView+OALayoutAnchor.m */,
 				A7C294C21B32584900575FDC /* UIView+OALayoutAnchorInternals.h */,
+				A72735A31B32613F0054D4B0 /* NSLayoutConstraint+SuppressActive.h */,
+				A72735A41B32613F0054D4B0 /* NSLayoutConstraint+SuppressActive.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1040,6 +1046,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				139B03C91B526867ADFD15C1 /* Pods-OALayoutAnchor_Example-umbrella.h in Headers */,
+				A72735A51B32613F0054D4B0 /* NSLayoutConstraint+SuppressActive.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1281,6 +1288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A72735A61B32613F0054D4B0 /* NSLayoutConstraint+SuppressActive.m in Sources */,
 				DBACF5F496DBA8A8564D14F7 /* Pods-OALayoutAnchor_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

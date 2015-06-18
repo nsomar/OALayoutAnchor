@@ -42,35 +42,19 @@
   [button setTitle:@"the button" forState:UIControlStateNormal];
   [self.view addSubview:button];
   
-  if ([[NSLayoutConstraint new] respondsToSelector:@selector(setActive:)]) {
-    [label1.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:100].active = YES;
-    [label1.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20].active = YES;
-    
-    [label2.topAnchor constraintEqualToAnchor:label1.topAnchor constant:0].active = YES;
-    [label2.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-10].active = YES;
-    
-    [separatorView.topAnchor constraintEqualToAnchor:label1.bottomAnchor constant:10].active = YES;
-    [separatorView.leadingAnchor constraintEqualToAnchor:label1.leadingAnchor].active = YES;
-    [separatorView.trailingAnchor constraintEqualToAnchor:label2.trailingAnchor].active = YES;
-    [separatorView.heightAnchor constraintEqualToConstant:10].active = YES;
-    
-    [button.trailingAnchor constraintEqualToAnchor:separatorView.trailingAnchor].active = YES;
-    [button.topAnchor constraintEqualToAnchor:separatorView.bottomAnchor constant:10].active = YES;
-  } else {
-    [label1.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:100];
-    [label1.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20];
-    
-    [label2.topAnchor constraintEqualToAnchor:label1.topAnchor constant:0];
-    [label2.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-10];
-    
-    [separatorView.topAnchor constraintEqualToAnchor:label1.bottomAnchor constant:10];
-    [separatorView.leadingAnchor constraintEqualToAnchor:label1.leadingAnchor];
-    [separatorView.trailingAnchor constraintEqualToAnchor:label2.trailingAnchor];
-    [separatorView.heightAnchor constraintEqualToConstant:10];
-    
-    [button.trailingAnchor constraintEqualToAnchor:separatorView.trailingAnchor];
-    [button.topAnchor constraintEqualToAnchor:separatorView.bottomAnchor constant:10];
-  }
+  [label1.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:100].active = YES;
+  [label1.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20].active = YES;
+  
+  [label2.topAnchor constraintEqualToAnchor:label1.topAnchor constant:0].active = YES;
+  [label2.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-10].active = YES;
+  
+  [separatorView.topAnchor constraintEqualToAnchor:label1.bottomAnchor constant:10].active = YES;
+  [separatorView.leadingAnchor constraintEqualToAnchor:label1.leadingAnchor].active = YES;
+  [separatorView.trailingAnchor constraintEqualToAnchor:label2.trailingAnchor].active = YES;
+  [separatorView.heightAnchor constraintEqualToConstant:10].active = YES;
+  
+  [button.trailingAnchor constraintEqualToAnchor:separatorView.trailingAnchor].active = YES;
+  [button.topAnchor constraintEqualToAnchor:separatorView.bottomAnchor constant:10].active = YES;
 }
 
 @end

@@ -77,6 +77,18 @@ Test are currently running for iOS 8 only, test for iOS 7 are coming next.
 
 The following a [human readable](https://raw.githubusercontent.com/oarrabi/OALayoutAnchor/master/Example/Tests/tests.transcript.txt?token=ABZLPLZHHBeo2g41rVZSKjCf-_DnrTnFks5ViydLwA%3D%3D) text subscript (generated with [specipy](https://github.com/oarrabi/specipy)).
 
+### Notes on using it on iOS 7
+
+Since iOS7 `NSLayoutConstraint` does not have an `active` property, the category `NSLayoutConstraint+SuppressActive` was introduced to make the usage of the constraints transparent between iOS7 and 8.
+
+When using the bellow line:
+```objc
+[label1.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20].active = YES;
+```
+
+On iOS 8, the returned constraint is not active until we call `.active = YES` on it. However, on iOS 7, since there is no active property on `NSLayoutConstraint`. a method has been attached to the `NSLayoutConstraint` to ignore the `isActive` method calls.
+
+That means that calling `isActive` or `active` on iOS 7 will not crash the app, these calls will just be ignored.
 
 ### Future improvements
 The following would be nice to have for future versions

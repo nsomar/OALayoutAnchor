@@ -8,6 +8,8 @@
 
 @import ObjectiveC;
 #import "UIView+OALayoutAnchor.h"
+#import "NSLayoutConstraint+SuppressActive.h"
+
 
 @interface OALayoutAnchor ()
 - (instancetype)initWithAttribute:(NSLayoutAttribute)attribute view:(UIView*)view;
@@ -87,22 +89,34 @@ centerXAnchor, centerYAnchor, firstBaselineAnchor, lastBaselineAnchor;
   
   // If the methods are already available on UIView that means addAnchorMethodsIfNeeded has already been called
   // Or that we are running on iOS9 and up
-  if (hasMethods) { return; }
-  
-  NSArray *methods = @[@"leadingAnchor", @"trailingAnchor", @"leftAnchor", @"rightAnchor",
-                       @"topAnchor", @"bottomAnchor", @"widthAnchor", @"heightAnchor",
-                       @"centerXAnchor", @"centerYAnchor", @"firstBaselineAnchor", @"lastBaselineAnchor"];
-  
-  //Iterate all the method, creating new methods that point to their oa_ prefixed ones
-  for (NSString *methodName in methods) {
-    SEL selector = NSSelectorFromString(methodName);
-    SEL newSelector = NSSelectorFromString([NSString stringWithFormat:@"oa_%@", methodName]);
+  if (!hasMethods) {
+
+    NSArray *methods = @[@"leadingAnchor", @"trailingAnchor", @"leftAnchor", @"rightAnchor",
+                         @"topAnchor", @"bottomAnchor", @"widthAnchor", @"heightAnchor",
+                         @"centerXAnchor", @"centerYAnchor", @"firstBaselineAnchor", @"lastBaselineAnchor"];
     
-    Method method = class_getInstanceMethod([UIView class], newSelector);
-    IMP imp = [UIView instanceMethodForSelector:newSelector];
-    
-    class_addMethod([UIView class], selector, imp, method_getTypeEncoding(method));
+    //Iterate all the method, creating new methods that point to their oa_ prefixed ones
+    for (NSString *methodName in methods) {
+      [self addMethodWithName:methodName toClass:[UIView class]];
+    }
   }
+  
+  hasMethods = [NSLayoutConstraint instancesRespondToSelector:@selector(setActive:)];
+  //We need to add methods for isActive and setActive to be able to transparently use constraints
+  if (!hasMethods) {
+    [self addMethodWithName:@"isActive" toClass:[NSLayoutConstraint class]];
+    [self addMethodWithName:@"setActive:" toClass:[NSLayoutConstraint class]];
+  }
+}
+
++ (void)addMethodWithName:(NSString*)methodName toClass:(Class)cls {
+  SEL selector = NSSelectorFromString(methodName);
+  SEL newSelector = NSSelectorFromString([NSString stringWithFormat:@"oa_%@", methodName]);
+  
+  Method method = class_getInstanceMethod(cls, newSelector);
+  IMP imp = [cls instanceMethodForSelector:newSelector];
+  
+  class_addMethod(cls, selector, imp, method_getTypeEncoding(method));
 }
 
 #pragma mark - helpers
@@ -127,7 +141,5 @@ centerXAnchor, centerYAnchor, firstBaselineAnchor, lastBaselineAnchor;
 - (void)setAssociatedObject:(id)object forKey:(SEL)key {
   objc_setAssociatedObject(self, key, object, OBJC_ASSOCIATION_RETAIN);
 }
-
-
 
 @end
