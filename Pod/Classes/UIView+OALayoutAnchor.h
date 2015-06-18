@@ -10,9 +10,9 @@
 #import "OALayoutAnchor.h"
 
 
-#ifndef __IPHONE_9_0
 @interface UIView (OALayoutAnchor)
 
+#ifndef __IPHONE_9_0
 @property(readonly, strong) OALayoutXAxisAnchor *leadingAnchor;
 @property(readonly, strong) OALayoutXAxisAnchor *trailingAnchor;
 @property(readonly, strong) OALayoutXAxisAnchor *leftAnchor;
@@ -29,6 +29,6 @@
 
 @property(readonly, strong) OALayoutYAxisAnchor *firstBaselineAnchor;
 @property(readonly, strong) OALayoutYAxisAnchor *lastBaselineAnchor;
+#endif
 
 @end
-#endif

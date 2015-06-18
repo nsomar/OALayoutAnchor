@@ -9,71 +9,100 @@
 @import ObjectiveC;
 #import "UIView+OALayoutAnchor.h"
 
-#ifndef __IPHONE_9_0
 @interface OALayoutAnchor ()
 - (instancetype)initWithAttribute:(NSLayoutAttribute)attribute view:(UIView*)view;
 @end
 
 @implementation UIView (OALayoutAnchor)
+#ifndef __IPHONE_9_0
+@dynamic leadingAnchor, trailingAnchor, leftAnchor, rightAnchor,
+topAnchor, bottomAnchor, widthAnchor, heightAnchor,
+centerXAnchor, centerYAnchor, firstBaselineAnchor, lastBaselineAnchor;
+#endif
 
-- (OALayoutXAxisAnchor *)leadingAnchor {
+- (OALayoutXAxisAnchor *)oa_leadingAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutXAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeLeading];
 }
 
-- (OALayoutXAxisAnchor *)trailingAnchor {
+- (OALayoutXAxisAnchor *)oa_trailingAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutXAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeTrailing];
 }
 
-- (OALayoutXAxisAnchor *)leftAnchor {
+- (OALayoutXAxisAnchor *)oa_leftAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutXAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeLeft];
 }
 
-- (OALayoutXAxisAnchor *)rightAnchor {
+- (OALayoutXAxisAnchor *)oa_rightAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutXAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeRight];
 }
 
-- (OALayoutYAxisAnchor *)topAnchor {
+- (OALayoutYAxisAnchor *)oa_topAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutYAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeTop];
 }
 
-- (OALayoutYAxisAnchor *)bottomAnchor {
+- (OALayoutYAxisAnchor *)oa_bottomAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutYAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeBottom];
 }
 
-- (OALayoutDimension *)widthAnchor {
+- (OALayoutDimension *)oa_widthAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutDimension class]
                                    layoutAttribute:NSLayoutAttributeWidth];
 }
 
-- (OALayoutDimension *)heightAnchor {
+- (OALayoutDimension *)oa_heightAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutDimension class]
                                    layoutAttribute:NSLayoutAttributeHeight];
 }
 
-- (OALayoutXAxisAnchor *)centerXAnchor {
+- (OALayoutXAxisAnchor *)oa_centerXAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutXAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeCenterX];
 }
 
-- (OALayoutYAxisAnchor *)centerYAnchor {
+- (OALayoutYAxisAnchor *)oa_centerYAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutYAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeCenterY];
 }
 
-- (OALayoutYAxisAnchor *)firstBaselineAnchor {
+- (OALayoutYAxisAnchor *)oa_firstBaselineAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutYAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeFirstBaseline];
 }
 
-- (OALayoutYAxisAnchor *)lastBaselineAnchor {
+- (OALayoutYAxisAnchor *)oa_lastBaselineAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutYAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeLastBaseline];
+}
+
+#pragma mark - adding the methods
+
++ (void)addAnchorMethodsIfNeeded {
+  BOOL hasMethods = [UIView instancesRespondToSelector:@selector(leadingAnchor)];
+  
+  // If the methods are already available on UIView that means addAnchorMethodsIfNeeded has already been called
+  // Or that we are running on iOS9 and up
+  if (hasMethods) { return; }
+  
+  NSArray *methods = @[@"leadingAnchor", @"trailingAnchor", @"leftAnchor", @"rightAnchor",
+                       @"topAnchor", @"bottomAnchor", @"widthAnchor", @"heightAnchor",
+                       @"centerXAnchor", @"centerYAnchor", @"firstBaselineAnchor", @"lastBaselineAnchor"];
+  
+  //Iterate all the method, creating new methods that point to their oa_ prefixed ones
+  for (NSString *methodName in methods) {
+    SEL selector = NSSelectorFromString(methodName);
+    SEL newSelector = NSSelectorFromString([NSString stringWithFormat:@"oa_%@", methodName]);
+    
+    Method method = class_getInstanceMethod([UIView class], newSelector);
+    IMP imp = [UIView instanceMethodForSelector:newSelector];
+    
+    class_addMethod([UIView class], selector, imp, method_getTypeEncoding(method));
+  }
 }
 
 #pragma mark - helpers
@@ -99,5 +128,6 @@
   objc_setAssociatedObject(self, key, object, OBJC_ASSOCIATION_RETAIN);
 }
 
+
+
 @end
-#endif

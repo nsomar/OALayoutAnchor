@@ -46,7 +46,6 @@
     [label1.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:100].active = YES;
     [label1.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20].active = YES;
     
-    
     [label2.topAnchor constraintEqualToAnchor:label1.topAnchor constant:0].active = YES;
     [label2.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-10].active = YES;
     
@@ -60,7 +59,6 @@
   } else {
     [label1.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:100];
     [label1.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20];
-    
     
     [label2.topAnchor constraintEqualToAnchor:label1.topAnchor constant:0];
     [label2.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-10];

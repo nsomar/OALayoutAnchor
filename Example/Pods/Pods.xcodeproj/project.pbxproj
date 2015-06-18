@@ -414,6 +414,7 @@
 		A51E4936E55084E180C8E117 /* KWMatcherFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KWMatcherFactory.h; path = Classes/Core/KWMatcherFactory.h; sourceTree = "<group>"; };
 		A64DD5C6F6EFF0C92CBEBE2E /* KWBeBetweenMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KWBeBetweenMatcher.h; path = Classes/Matchers/KWBeBetweenMatcher.h; sourceTree = "<group>"; };
 		A79A3C1423F95670B05165BD /* KWRegisterMatchersNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KWRegisterMatchersNode.m; path = Classes/Nodes/KWRegisterMatchersNode.m; sourceTree = "<group>"; };
+		A7C294C21B32584900575FDC /* UIView+OALayoutAnchorInternals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+OALayoutAnchorInternals.h"; sourceTree = "<group>"; };
 		A8555DA3F7B1D338ABD4E413 /* UIView+OALayoutAnchor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+OALayoutAnchor.m"; sourceTree = "<group>"; };
 		AAF1CBF03FFE66E4BEB8D231 /* KWMessageTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KWMessageTracker.h; path = Classes/Core/KWMessageTracker.h; sourceTree = "<group>"; };
 		AB1D25400C8AEAA86B3244AB /* KWBlockNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KWBlockNode.m; path = Classes/Nodes/KWBlockNode.m; sourceTree = "<group>"; };
@@ -824,6 +825,7 @@
 				606F14EEDCE6D63313FC77AD /* OALayoutAnchor.m */,
 				7010F3D07CFCA465D4CFF7A8 /* UIView+OALayoutAnchor.h */,
 				A8555DA3F7B1D338ABD4E413 /* UIView+OALayoutAnchor.m */,
+				A7C294C21B32584900575FDC /* UIView+OALayoutAnchorInternals.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

@@ -7,9 +7,9 @@
 //
 
 #import "OALayoutAnchor.h"
+#import "UIView+OALayoutAnchorInternals.h"
 
 
-#ifndef __IPHONE_9_0
 @interface OALayoutAnchor ()
 @property (nonatomic, weak) UIView *view;
 @property (nonatomic) NSLayoutAttribute attribute;
@@ -18,6 +18,10 @@
 @end
 
 @implementation OALayoutAnchor
+
++ (void)load {
+  [UIView addAnchorMethodsIfNeeded];
+}
 
 - (instancetype)initWithAttribute:(NSLayoutAttribute)attribute view:(UIView*)view {
   self = [super init];
@@ -196,4 +200,3 @@
 }
 
 @end
-#endif

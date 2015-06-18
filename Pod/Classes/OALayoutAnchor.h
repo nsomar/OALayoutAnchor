@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-#ifndef __IPHONE_9_0
 @interface OALayoutAnchor : NSObject
 
 - (NSLayoutConstraint *)constraintEqualToAnchor:(OALayoutAnchor*)anchor;
@@ -54,4 +53,3 @@
 - (NSLayoutConstraint *)constraintLessThanOrEqualToAnchor:(OALayoutDimension *)anchor multiplier:(CGFloat)m constant:(CGFloat)c;
 
 @end
-#endif
