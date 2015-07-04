@@ -9,6 +9,6 @@
 // OALayoutAnchor
 #define COCOAPODS_POD_AVAILABLE_OALayoutAnchor
 #define COCOAPODS_VERSION_MAJOR_OALayoutAnchor 0
-#define COCOAPODS_VERSION_MINOR_OALayoutAnchor 1
+#define COCOAPODS_VERSION_MINOR_OALayoutAnchor 2
 #define COCOAPODS_VERSION_PATCH_OALayoutAnchor 0
 

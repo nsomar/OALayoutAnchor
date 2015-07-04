@@ -844,20 +844,15 @@ describe(@"OALayoutAnchor", ^{
         [view2.centerXAnchor constraintEqualToAnchor:parentView.centerXAnchor].active = YES;
         [view2.centerYAnchor constraintEqualToAnchor:parentView.centerYAnchor].active = YES;
         
-        [view2.widthAnchor constraintLessThanOrEqualToAnchor:view1.widthAnchor multiplier:2].active = YES;
+        NSLayoutConstraint *constraint = [view2.widthAnchor constraintLessThanOrEqualToAnchor:view1.widthAnchor multiplier:2];
+        constraint.active = YES;
+        
         [view2.heightAnchor constraintEqualToAnchor:view1.heightAnchor multiplier:2].active = YES;
         
         layoutView(parentView);
         
         [[theValue(view1.frame) should] equal:theValue(CGRectMake(450, 450, 100, 100))];
-        [[theValue(view2.frame) should] equal:theValue(CGRectMake(250, 400, 500, 200))];
-        
-        [view2.widthAnchor constraintEqualToAnchor:view1.widthAnchor multiplier:10].active = YES;
-        
-        layoutView(parentView);
-        
-        [[theValue(view1.frame) should] equal:theValue(CGRectMake(450, 450, 100, 100))];
-        [[theValue(view2.frame) should] equal:theValue(CGRectMake(0, 400, 1000, 200))];
+        [[theValue(view2.frame) should] equal:theValue(CGRectMake(400, 400, 200, 200))];
       });
     });
   });

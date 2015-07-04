@@ -10,7 +10,10 @@
 
 @interface NSLayoutConstraint (SuppressActive)
 
-- (BOOL)oa_isActive;
-- (void)oa_setActive:(BOOL)active;
+/**
+ *  oa_active is to be used when writing in Swift, as swift will complain that active is only ios 8 and up
+ */
+
+@property (nonatomic, assign) BOOL oa_active;
 
 @end

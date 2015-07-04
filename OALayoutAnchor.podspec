@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "OALayoutAnchor"
-  s.version          = "0.1.1"
+  s.version          = "0.2.0"
   s.summary          = "Porting NSLayoutAnchor to iOS7 (100% port)."
   s.description      = <<-DESC
   `OALayoutAnchor` is an effort to port the amazing [NSLayoutAnchor](https://developer.apple.com/library/prerelease/mac/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html) introduced in iOS 9 to iOS 7.

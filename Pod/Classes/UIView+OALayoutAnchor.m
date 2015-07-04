@@ -22,62 +22,62 @@ topAnchor, bottomAnchor, widthAnchor, heightAnchor,
 centerXAnchor, centerYAnchor, firstBaselineAnchor, lastBaselineAnchor;
 #endif
 
-- (OALayoutXAxisAnchor *)oa_leadingAnchor {
+- (OALayoutXAxisAnchor *)___leadingAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutXAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeLeading];
 }
 
-- (OALayoutXAxisAnchor *)oa_trailingAnchor {
+- (OALayoutXAxisAnchor *)___trailingAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutXAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeTrailing];
 }
 
-- (OALayoutXAxisAnchor *)oa_leftAnchor {
+- (OALayoutXAxisAnchor *)___leftAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutXAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeLeft];
 }
 
-- (OALayoutXAxisAnchor *)oa_rightAnchor {
+- (OALayoutXAxisAnchor *)___rightAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutXAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeRight];
 }
 
-- (OALayoutYAxisAnchor *)oa_topAnchor {
+- (OALayoutYAxisAnchor *)___topAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutYAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeTop];
 }
 
-- (OALayoutYAxisAnchor *)oa_bottomAnchor {
+- (OALayoutYAxisAnchor *)___bottomAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutYAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeBottom];
 }
 
-- (OALayoutDimension *)oa_widthAnchor {
+- (OALayoutDimension *)___widthAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutDimension class]
                                    layoutAttribute:NSLayoutAttributeWidth];
 }
 
-- (OALayoutDimension *)oa_heightAnchor {
+- (OALayoutDimension *)___heightAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutDimension class]
                                    layoutAttribute:NSLayoutAttributeHeight];
 }
 
-- (OALayoutXAxisAnchor *)oa_centerXAnchor {
+- (OALayoutXAxisAnchor *)___centerXAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutXAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeCenterX];
 }
 
-- (OALayoutYAxisAnchor *)oa_centerYAnchor {
+- (OALayoutYAxisAnchor *)___centerYAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutYAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeCenterY];
 }
 
-- (OALayoutYAxisAnchor *)oa_firstBaselineAnchor {
+- (OALayoutYAxisAnchor *)___firstBaselineAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutYAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeFirstBaseline];
 }
 
-- (OALayoutYAxisAnchor *)oa_lastBaselineAnchor {
+- (OALayoutYAxisAnchor *)___lastBaselineAnchor {
   return [self getAnchorAndCreateItIfNeededWithKey:_cmd anchorClass:[OALayoutYAxisAnchor class]
                                    layoutAttribute:NSLayoutAttributeLastBaseline];
 }
@@ -95,7 +95,7 @@ centerXAnchor, centerYAnchor, firstBaselineAnchor, lastBaselineAnchor;
                          @"topAnchor", @"bottomAnchor", @"widthAnchor", @"heightAnchor",
                          @"centerXAnchor", @"centerYAnchor", @"firstBaselineAnchor", @"lastBaselineAnchor"];
     
-    //Iterate all the method, creating new methods that point to their oa_ prefixed ones
+    //Iterate all the method, creating new methods that point to their ___ prefixed ones
     for (NSString *methodName in methods) {
       [self addMethodWithName:methodName toClass:[UIView class]];
     }
@@ -111,7 +111,7 @@ centerXAnchor, centerYAnchor, firstBaselineAnchor, lastBaselineAnchor;
 
 + (void)addMethodWithName:(NSString*)methodName toClass:(Class)cls {
   SEL selector = NSSelectorFromString(methodName);
-  SEL newSelector = NSSelectorFromString([NSString stringWithFormat:@"oa_%@", methodName]);
+  SEL newSelector = NSSelectorFromString([NSString stringWithFormat:@"___%@", methodName]);
   
   Method method = class_getInstanceMethod(cls, newSelector);
   IMP imp = [cls instanceMethodForSelector:newSelector];

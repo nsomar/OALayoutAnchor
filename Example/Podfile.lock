@@ -1,6 +1,6 @@
 PODS:
   - Kiwi (2.3.1)
-  - OALayoutAnchor (0.1.0)
+  - OALayoutAnchor (0.2.0)
 
 DEPENDENCIES:
   - Kiwi
@@ -12,6 +12,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
-  OALayoutAnchor: 0734e56484184a65f2d29d06cf50f879b2f6c5ef
+  OALayoutAnchor: 27a15a06ebfd3bc07de527f6cd4a5a714c47226d
 
 COCOAPODS: 0.37.1

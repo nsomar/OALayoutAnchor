@@ -8,6 +8,7 @@
 
 #import "OALayoutAnchor.h"
 #import "UIView+OALayoutAnchorInternals.h"
+#import "NSLayoutConstraint+SuppressActive.h"
 
 
 @interface OALayoutAnchor ()
@@ -81,10 +82,7 @@
 - (void)addConstraint:(NSLayoutConstraint*)constraint betweenView:(UIView*)view otherView:(UIView*)otherView {
   UIView *parent = [self viewToAddConstraintOnForFirstView:self.view secondView:otherView];
   [parent addConstraint:constraint];
-  
-  if ([constraint respondsToSelector:@selector(setActive:)]) {
-    constraint.active = NO;
-  }
+  constraint.active = NO;
 }
 
 - (UIView*)viewToAddConstraintOnForFirstView:(UIView*)firstView secondView:(UIView*)secondView {
@@ -135,7 +133,7 @@
 }
 
 - (NSLayoutConstraint *)constraintLessThanOrEqualToAnchor:(OALayoutDimension *)anchor multiplier:(CGFloat)m {
-  return [self constraintGreaterThanOrEqualToAnchor:anchor multiplier:m constant:0];
+  return [self constraintLessThanOrEqualToAnchor:anchor multiplier:m constant:0];
 }
 
 - (NSLayoutConstraint *)constraintEqualToAnchor:(OALayoutDimension *)anchor multiplier:(CGFloat)m constant:(CGFloat)c {
@@ -193,10 +191,8 @@
 
 - (void)addConstraint:(NSLayoutConstraint*)constraint toView:(UIView*)view {
   [view addConstraint:constraint];
-  
-  if ([constraint respondsToSelector:@selector(setActive:)]) {
-    constraint.active = NO;
-  }
+
+  constraint.active = NO;
 }
 
 @end
