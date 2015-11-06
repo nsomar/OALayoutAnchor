@@ -13,7 +13,7 @@
 //To fix this you can guard agains the api. However, for a more transparent usage for anchors on ios
 //7,8 and 9, if you are using swift, use oa_ prefixed version.
 
-#ifndef __IPHONE_9_0
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < 90000
 #import <OALayoutAnchor/UIView+OALayoutAnchor.h>
 #import <OALayoutAnchor/OALayoutAnchor.h>
 #define NSLayoutXAxisAnchor OALayoutXAxisAnchor
