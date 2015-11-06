@@ -16,7 +16,7 @@ class OAViewController2: UIViewController {
     let view1 = UIView()
     view1.backgroundColor = UIColor.blueColor()
     
-    view1.setTranslatesAutoresizingMaskIntoConstraints(false)
+    view1.translatesAutoresizingMaskIntoConstraints = false
     self.view.addSubview(view1)
     view1.oa_widthAnchor.constraintEqualToConstant(100).oa_active = true
     view1.oa_heightAnchor.constraintEqualToConstant(100).oa_active = true
