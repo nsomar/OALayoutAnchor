@@ -14,8 +14,8 @@
 // 7, 8, and 9, if you are using Swift, use oa_ prefixed version.
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < 90000
-#import <OALayoutAnchor/UIView+OALayoutAnchor.h>
-#import <OALayoutAnchor/OALayoutAnchor.h>
+#import "UIView+OALayoutAnchor.h"
+#import "OALayoutAnchor.h"
 #define NSLayoutXAxisAnchor OALayoutXAxisAnchor
 #define NSLayoutYAxisAnchor OALayoutYAxisAnchor
 #define NSLayoutDimension OALayoutDimension
