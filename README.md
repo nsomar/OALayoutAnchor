@@ -9,6 +9,9 @@
 
 `OALayoutAnchor` is a 100% port of `NSLayoutAnchor` to iOS 7, it aims to provide the same functionality to iOS 7, and rollback to `NSLayoutAnchor` on iOS 9 and up.
 
+`OALayoutGuide` is a port of `UILayoutGuide` to iOS 8, it aims to provide the same functionality to iOS 8, and rollback to
+`UILayoutGuide` on iOS 9 and up. Warning this version works only since iOS 8 because NSLayoutAttributeMargins will be avalible since iOS 8.
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -125,6 +128,7 @@ The following would be nice to have for future versions
 - [ ] Increase the test coverage for Greater than and Less Than
 - [ ] Better Documentation
 - [ ] Add tests for iOS 7
+- [ ] Add support OALayoutGuide for iOS 7
 
 
 ## Author
