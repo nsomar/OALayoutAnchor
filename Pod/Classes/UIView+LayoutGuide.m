@@ -26,7 +26,7 @@ NSString const * OALayoutGuiedKey = @"OALayoutGuiedKey";
 + (void)addLayoutGuideMethodsIfNeeded {
     BOOL hasMethods = [UIView instancesRespondToSelector:@selector(layoutMarginsGuide)];
     
-    // If the methods are already available on UIView that means addAnchorMethodsIfNeeded has already been called
+    // If the methods are already available on UIView that means addLayoutGuideMethodsIfNeeded has already been called
     // Or that we are running on iOS9 and up
     if (!hasMethods) {
         
