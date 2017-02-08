@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <OALayoutAnchor/OALayoutAnchor.h>
+#import "OALayoutAnchor.h"
 
 @interface OALayoutGuide : NSObject
 
