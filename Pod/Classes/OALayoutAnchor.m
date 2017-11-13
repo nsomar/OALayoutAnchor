@@ -20,7 +20,7 @@
 
 @implementation OALayoutAnchor
 
-+ (void)initialize {
++ (void)load {
   [UIView addAnchorMethodsIfNeeded];
 }
 

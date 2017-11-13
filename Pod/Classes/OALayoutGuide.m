@@ -17,7 +17,7 @@
 
 @implementation OALayoutGuide
 
-+ (void)initialize {
++ (void)load {
     [UIView addLayoutGuideMethodsIfNeeded];
 }
 
